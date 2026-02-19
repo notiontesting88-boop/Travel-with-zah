@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Travel with Zaheer</title>
+  <meta name="description" content="Browse all travel stories, destination guides, and adventure journals from Travel with Zaheer.">
+  <meta property="og:title" content="Blog — Travel with Zaheer">
+  <meta property="og:description" content="Browse all travel stories, destination guides, and adventure journals.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://travelwithzaheer.com/blog.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <nav class="nav light" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">Travel with <span>Zaheer</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero" aria-label="Blog hero">
+    <div class="page-hero-bg" id="blog-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80');"></div>
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-content">
+      <span class="section-label">All Stories</span>
+      <h1>The <em>Blog</em></h1>
+    </div>
+  </section>
+
+  <main class="blog-container">
+    <div class="blog-filters" id="blog-filters" role="group" aria-label="Filter by region">
+      <button class="filter-btn active" data-filter="all">All</button>
+    </div>
+    <!-- Posts injected by JS from posts/index.json — no hardcoding -->
+    <div class="blog-grid" id="blog-grid" role="list" aria-label="Blog posts">
+      <p class="no-posts" id="blog-loading">Loading posts…</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Travel with <span>Zaheer</span></div>
+        <p class="footer-tagline">Exploring the world one story at a time.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Regions</div>
+        <ul class="footer-links">
+          <li><a href="/blog.html">Asia</a></li>
+          <li><a href="/blog.html">Europe</a></li>
+          <li><a href="/blog.html">Africa</a></li>
+          <li><a href="/blog.html">Americas</a></li>
+          <li><a href="/blog.html">Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Travel with Zaheer. All rights reserved.</p>
+      <a href="/admin/" class="footer-admin-link">Admin</a>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>

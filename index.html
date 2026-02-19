@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel with Zaheer — Explore the World Through My Eyes</title>
+  <meta name="description" content="Travel stories, destinations, and adventures from around the world. Join Zaheer on a journey through culture, cuisine, and breathtaking landscapes.">
+  <meta property="og:title" content="Travel with Zaheer">
+  <meta property="og:description" content="Travel stories, destinations, and adventures from around the world.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://travelwithzaheer.com">
+  <link rel="canonical" href="https://travelwithzaheer.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Travel with Zaheer — Home">
+      Travel with <span>Zaheer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" aria-label="Hero section">
+    <div class="hero-bg" id="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80');"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">The World Awaits</span>
+      <h1 class="hero-title">Travel with<br><em>Zaheer</em></h1>
+      <p class="hero-subtitle">Stories from the road. Real places, real people, real moments.</p>
+      <a href="/blog.html" class="hero-cta"><span>Explore the Blog</span><span>→</span></a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="featured" aria-labelledby="featured-heading">
+    <div class="featured-header">
+      <div>
+        <span class="section-label">Latest Stories</span>
+        <h2 class="section-title featured-custom-title" id="featured-heading">From the <em>Journal</em></h2>
+      </div>
+      <a href="/blog.html" class="featured-link">View all posts</a>
+    </div>
+    <!-- Posts injected by JS from posts/index.json — no hardcoding -->
+    <div class="posts-grid" id="featured-grid">
+      <p class="no-posts" id="featured-loading" style="grid-column:1/-1;">Loading posts…</p>
+    </div>
+  </section>
+
+  <section class="about-strip" id="about" aria-labelledby="about-heading">
+    <div class="about-strip-image">
+      <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&q=80" alt="Zaheer travelling" loading="lazy">
+    </div>
+    <div class="about-strip-content">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title" id="about-heading">A Wanderer<br>at <em>Heart</em></h2>
+      <div class="divider"></div>
+      <p class="about-strip-text" id="about-text">
+        I've been chasing sunsets, street food, and stories for over a decade. This blog is my attempt to bottle those moments — the ones that change how you see the world.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Travel with <span>Zaheer</span></div>
+        <p class="footer-tagline">Exploring the world one story at a time.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Regions</div>
+        <ul class="footer-links">
+          <li><a href="/blog.html">Asia</a></li>
+          <li><a href="/blog.html">Europe</a></li>
+          <li><a href="/blog.html">Africa</a></li>
+          <li><a href="/blog.html">Americas</a></li>
+          <li><a href="/blog.html">Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Travel with Zaheer. All rights reserved.</p>
+      <a href="/admin/" class="footer-admin-link">Admin</a>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
