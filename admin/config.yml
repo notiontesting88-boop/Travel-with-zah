@@ -1,0 +1,154 @@
+# ============================================
+# DECAP CMS CONFIG — Travel with Zaheer
+# ============================================
+# This file controls what your client sees
+# in the admin panel at /admin
+# ============================================
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Media (image uploads)
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# ============================================
+# COLLECTIONS
+# ============================================
+
+collections:
+
+  # ------------------------------------------
+  # BLOG POSTS
+  # ------------------------------------------
+  - name: "posts"
+    label: "✍️ Blog Posts"
+    label_singular: "Blog Post"
+    folder: "_posts"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    preview_path: "/blog/{{slug}}.html"
+    summary: "{{title}} — {{region}} | {{date}}"
+    sortable_fields: ["date", "title", "region"]
+
+    fields:
+
+      # Post Title
+      - label: "📝 Title"
+        name: "title"
+        widget: "string"
+        hint: "The main headline of your post"
+
+      # URL Slug
+      - label: "🔗 URL Slug"
+        name: "slug"
+        widget: "string"
+        hint: "The URL for this post (e.g: golden-temples-kyoto). No spaces, no capitals."
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Only lowercase letters, numbers, and hyphens please"]
+
+      # Short Description
+      - label: "📄 Short Description"
+        name: "description"
+        widget: "text"
+        hint: "A 1–2 sentence summary shown on the blog listing page"
+
+      # Date
+      - label: "📅 Publish Date"
+        name: "date"
+        widget: "datetime"
+        hint: "When was this post written?"
+
+      # Region
+      - label: "🌍 Region"
+        name: "region"
+        widget: "select"
+        options:
+          - "Asia"
+          - "Southeast Asia"
+          - "South Asia"
+          - "Middle East"
+          - "Europe"
+          - "Africa"
+          - "Americas"
+          - "Oceania"
+        hint: "Which part of the world is this post about?"
+
+      # Cover Image (shown on blog listing)
+      - label: "🖼️ Cover Photo"
+        name: "cover"
+        widget: "image"
+        hint: "The thumbnail shown on the blog listing page. Best size: 1200 x 900px"
+
+      # Hero Image (shown at top of the full post)
+      - label: "🏔️ Hero Photo (Full Post)"
+        name: "hero_image"
+        widget: "image"
+        required: false
+        hint: "The large banner at the top of the post. Best size: 1920 x 1080px. If left empty, cover photo is used."
+
+      # Gallery
+      - label: "📸 Gallery Photos"
+        name: "gallery_images"
+        widget: "list"
+        required: false
+        label_singular: "Photo"
+        field:
+          label: "Photo"
+          name: "image"
+          widget: "image"
+        hint: "Optional: Add extra photos shown at the bottom of the post"
+
+      # Main Content
+      - label: "✍️ Post Content"
+        name: "content"
+        widget: "markdown"
+        hint: "Write your full blog post here. You can add headings, bold text, photos, and quotes."
+
+      # Published toggle
+      - label: "✅ Published"
+        name: "published"
+        widget: "boolean"
+        default: false
+        hint: "Toggle ON to make this post live on the website. Toggle OFF to save as draft."
+
+  # ------------------------------------------
+  # SITE SETTINGS
+  # ------------------------------------------
+  - name: "site_settings"
+    label: "⚙️ Site Settings"
+    description: "Edit the homepage images, about text, and other sitewide content"
+    files:
+
+      - label: "🏠 Homepage Settings"
+        name: "homepage"
+        file: "_data/site_settings.json"
+        fields:
+
+          # Homepage Hero Image
+          - label: "🖼️ Homepage Hero Photo"
+            name: "homepage_hero"
+            widget: "image"
+            required: false
+            hint: "The large background photo on the homepage. Best size: 1920 x 1080px"
+
+          # Blog Page Hero Image
+          - label: "📖 Blog Page Hero Photo"
+            name: "blog_hero"
+            widget: "image"
+            required: false
+            hint: "The background photo at the top of the blog listing page"
+
+          # About text
+          - label: "👤 About Me Text"
+            name: "about_text"
+            widget: "text"
+            hint: "The short paragraph about you shown on the homepage"
+
+          # Featured section title
+          - label: "🌟 Featured Section Title"
+            name: "featured_title"
+            widget: "string"
+            default: "From the Journal"
+            hint: "The heading above the featured posts on the homepage"
