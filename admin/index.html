@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Travel with Zaheer</title>
+</head>
+<body>
+  <!-- 1. Netlify Identity MUST load before Decap CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- 2. Decap CMS — v3.0.0 is the most stable CDN release -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.0/dist/decap-cms.js"></script>
+
+  <!-- 3. Inline config — works without config.yml -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+
+    window.addEventListener('load', function () {
+      CMS.init({
+        config: {
+          backend: {
+            name: 'git-gateway',
+            branch: 'main'
+          },
+          media_folder: 'uploads',
+          public_folder: '/uploads',
+          collections: [
+            {
+              name: 'posts',
+              label: 'Blog Posts',
+              label_singular: 'Blog Post',
+              folder: '_posts',
+              create: true,
+              slug: '{{slug}}',
+              identifier_field: 'title',
+              fields: [
+                { label: 'Title',            name: 'title',          widget: 'string'   },
+                { label: 'URL Slug',         name: 'slug',           widget: 'string',   hint: 'e.g: golden-temples-kyoto (lowercase, no spaces)' },
+                { label: 'Short Description',name: 'description',    widget: 'text'     },
+                { label: 'Publish Date',     name: 'date',           widget: 'datetime' },
+                { label: 'Region',           name: 'region',         widget: 'select',
+                  options: ['Asia','Southeast Asia','South Asia','Middle East','Europe','Africa','Americas','Oceania'] },
+                { label: 'Cover Photo',      name: 'cover',          widget: 'image'    },
+                { label: 'Hero Photo',       name: 'hero_image',     widget: 'image',   required: false },
+                { label: 'Gallery Photos',   name: 'gallery_images', widget: 'list',    required: false,
+                  field: { label: 'Photo', name: 'image', widget: 'image' } },
+                { label: 'Post Content',     name: 'content',        widget: 'markdown' },
+                { label: 'Published',        name: 'published',      widget: 'boolean', default: false }
+              ]
+            },
+            {
+              name: 'site_settings',
+              label: 'Site Settings',
+              files: [
+                {
+                  label: 'Homepage Settings',
+                  name: 'homepage',
+                  file: '_data/site_settings.json',
+                  fields: [
+                    { label: 'Homepage Hero Photo',      name: 'homepage_hero',  widget: 'image',  required: false },
+                    { label: 'Blog Page Hero Photo',     name: 'blog_hero',      widget: 'image',  required: false },
+                    { label: 'About Me Text',            name: 'about_text',     widget: 'text'    },
+                    { label: 'Featured Section Heading', name: 'featured_title', widget: 'string'  }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    });
+  </script>
+</body>
+</html>
