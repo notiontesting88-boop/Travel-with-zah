@@ -1,33 +1,13 @@
 {
   "posts": [
     {
-      "title": "Golden Temples of Kyoto",
-      "slug": "golden-temples-kyoto",
-      "description": "A walk through ancient Japan — lantern-lit alleys, matcha ceremonies, and the quiet beauty of Arashiyama bamboo grove.",
-      "date": "2024-12-01",
-      "region": "Asia",
-      "cover": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
-      "hero_image": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1920&q=80",
-      "published": true
-    },
-    {
-      "title": "Lost in the Medina of Marrakech",
-      "slug": "marrakech-medina",
-      "description": "Spice markets, rooftop riads, and the hypnotic sound of Jemaa el-Fnaa as the sun dips below the Atlas Mountains.",
-      "date": "2024-11-12",
-      "region": "Africa",
-      "cover": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&q=80",
-      "hero_image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1920&q=80",
-      "published": true
-    },
-    {
-      "title": "Dawn at the Taj Mahal",
-      "slug": "taj-mahal-dawn",
-      "description": "Arriving before sunrise to witness marble turn from grey to pink to gold — an experience that defies every photograph.",
-      "date": "2024-10-28",
-      "region": "South Asia",
-      "cover": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
-      "hero_image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1920&q=80",
+      "title": "Snannanakkakakakakakkakakakakkakakakkakakakkakakakskksk",
+      "slug": "Snjsajwiwkksk",
+      "description": "Sjkwkwwnanakkskakkskskakakkalakwkwkkwkwkkwkwkskskskks",
+      "date": "2026-02-19T16:13:30.037Z",
+      "region": "Southeast Asia",
+      "cover": "/uploads/1000045213.jpg",
+      "hero_image": "",
       "published": true
     }
   ]
