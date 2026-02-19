@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Travel with Zaheer</title>
+</head>
+<body>
+  <!-- Step 1: Netlify Identity (must come first) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Step 2: Decap CMS via jsDelivr (more reliable than unpkg) -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.3.3/dist/decap-cms.js"></script>
+
+  <!-- Step 3: Manual init with inline config (no YAML file parsing needed) -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof CMS === 'undefined') {
+        document.body.innerHTML = '<div style="font-family:sans-serif;padding:40px;text-align:center"><h2>CMS failed to load</h2><p>Check your internet connection and try a hard refresh (Ctrl+Shift+R)</p></div>';
+        return;
+      }
+
+      CMS.init({
+        config: {
+          backend: {
+            name: 'git-gateway',
+            branch: 'main',
+          },
+          media_folder: 'uploads',
+          public_folder: '/uploads',
+          collections: [
+            {
+              name: 'posts',
+              label: 'Blog Posts',
+              label_singular: 'Blog Post',
+              folder: '_posts',
+              create: true,
+              slug: '{{slug}}',
+              identifier_field: 'title',
+              summary: '{{title}} — {{region}} ({{date}})',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string', hint: 'The headline of your post' },
+                { label: 'URL Slug', name: 'slug', widget: 'string', hint: 'Short URL e.g: golden-temples-kyoto (lowercase, no spaces)' },
+                { label: 'Short Description', name: 'description', widget: 'text', hint: '1-2 sentences shown on the blog listing page' },
+                { label: 'Publish Date', name: 'date', widget: 'datetime' },
+                {
+                  label: 'Region', name: 'region', widget: 'select',
+                  options: ['Asia', 'Southeast Asia', 'South Asia', 'Middle East', 'Europe', 'Africa', 'Americas', 'Oceania']
+                },
+                { label: 'Cover Photo', name: 'cover', widget: 'image', hint: 'Thumbnail on blog listing (best: 1200x900px)' },
+                { label: 'Hero Photo (top of post)', name: 'hero_image', widget: 'image', required: false, hint: 'Large banner at top of post (best: 1920x1080px)' },
+                {
+                  label: 'Gallery Photos', name: 'gallery_images', widget: 'list', required: false,
+                  field: { label: 'Photo', name: 'image', widget: 'image' }
+                },
+                { label: 'Post Content', name: 'content', widget: 'markdown' },
+                { label: 'Published', name: 'published', widget: 'boolean', default: false, hint: 'ON = live on site. OFF = draft.' },
+              ],
+            },
+            {
+              name: 'site_settings',
+              label: 'Site Settings',
+              files: [
+                {
+                  label: 'Homepage & Global Settings',
+                  name: 'homepage',
+                  file: '_data/site_settings.json',
+                  fields: [
+                    { label: 'Homepage Hero Photo', name: 'homepage_hero', widget: 'image', required: false },
+                    { label: 'Blog Page Hero Photo', name: 'blog_hero', widget: 'image', required: false },
+                    { label: 'About Me Text', name: 'about_text', widget: 'text' },
+                    { label: 'Featured Section Heading', name: 'featured_title', widget: 'string', default: 'From the Journal' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      });
+    });
+  </script>
+</body>
+</html>
