@@ -1,0 +1,39 @@
+# Netlify config — Travel with Zaheer
+# Build command is empty — site is pure static files
+# Content is fetched from GitHub API at runtime (zero redeploy cost)
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/main.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Robots-Tag = "noindex"
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug.html"
+  status = 200
