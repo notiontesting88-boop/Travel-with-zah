@@ -4,10 +4,7 @@
 
 [build]
   publish = "."
-  command = "echo 'Static site — no build needed'"
-
-# No build command needed for pure static sites
-# This keeps build times under 5 seconds
+  command = "node build.js"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -59,13 +56,3 @@
   from = "/blog/:slug/"
   to = "/blog/:slug.html"
   status = 200
-
-# ============================================
-# IDENTITY — Required for Decap CMS
-# ============================================
-# After deployment:
-# 1. Go to Netlify → Site Settings → Identity
-# 2. Click "Enable Identity"
-# 3. Under Registration: set to "Invite only"
-# 4. Go to Identity → Services → Enable Git Gateway
-# 5. Invite yourself via Identity → Invite Users
