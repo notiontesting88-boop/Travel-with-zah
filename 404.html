@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Travel with Zaheer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--dark);
+      padding: 48px 24px;
+    }
+    .error-number {
+      font-family: var(--font-display);
+      font-size: 8rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .error-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .error-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 40px;
+    }
+    .error-link {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .error-link:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div>
+      <div class="error-number">404</div>
+      <h1 class="error-title">Lost on the Road</h1>
+      <p class="error-text">This page doesn't exist — but the world does. Let's find you somewhere beautiful.</p>
+      <a href="/" class="error-link">Return Home</a>
+    </div>
+  </div>
+</body>
+</html>

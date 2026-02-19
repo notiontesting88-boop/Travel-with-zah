@@ -1,0 +1,71 @@
+# ============================================
+# NETLIFY CONFIG — Travel with Zaheer
+# ============================================
+
+[build]
+  publish = "."
+  command = "echo 'Static site — no build needed'"
+
+# No build command needed for pure static sites
+# This keeps build times under 5 seconds
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# ============================================
+# HEADERS — Security + Performance
+# ============================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/main.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Robots-Tag = "noindex"
+
+# ============================================
+# REDIRECTS
+# ============================================
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug.html"
+  status = 200
+
+# ============================================
+# IDENTITY — Required for Decap CMS
+# ============================================
+# After deployment:
+# 1. Go to Netlify → Site Settings → Identity
+# 2. Click "Enable Identity"
+# 3. Under Registration: set to "Invite only"
+# 4. Go to Identity → Services → Enable Git Gateway
+# 5. Invite yourself via Identity → Invite Users

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post — Travel with Zaheer</title>
+  <meta name="description" content="">
+
+  <!-- Open Graph (filled by JS) -->
+  <meta property="og:title" content="Travel with Zaheer">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* Post-specific enhancements */
+    .post-body .post-lead {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      line-height: 1.8;
+    }
+
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 48px;
+      transition: gap 0.2s;
+    }
+
+    .post-back:hover {
+      gap: 14px;
+    }
+
+    .post-share {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .post-share-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-mid);
+    }
+
+    .share-btn {
+      padding: 8px 18px;
+      border: 1px solid var(--light);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      background: none;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+
+    .share-btn:hover {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    /* Related posts */
+    .related-posts {
+      background: var(--off-white);
+      padding: 80px 48px;
+    }
+
+    .related-posts .section-label {
+      margin-bottom: 12px;
+    }
+
+    .related-posts h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 48px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .related-posts {
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</head>
+<body id="post-container">
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">
+      Travel with <span>Zaheer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- POST HERO -->
+  <section class="post-hero" aria-label="Post hero">
+    <div class="post-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1920&q=80');"></div>
+    <div class="post-hero-gradient"></div>
+    <div class="post-hero-content">
+      <div class="post-meta">
+        <span class="post-region">Asia</span>
+        <span class="post-date">December 1, 2024</span>
+      </div>
+      <h1 class="post-hero-title">Golden Temples of Kyoto</h1>
+    </div>
+  </section>
+
+  <!-- POST BODY -->
+  <main class="post-body" role="main">
+    <a href="/blog.html" class="post-back">← Back to Blog</a>
+
+    <p class="post-lead">
+      A walk through ancient Japan — lantern-lit alleys, matcha ceremonies, and the quiet beauty of Arashiyama bamboo grove.
+    </p>
+
+    <div class="post-content" id="post-content">
+      <!-- Content rendered by JS from markdown, or static content here -->
+      <p>Japan is a country that rewards the slow traveller. The one who wanders without agenda, who turns down alleys that lead nowhere in particular, who sits with a bowl of ramen long after it's been finished.</p>
+
+      <p>Kyoto, more than any other city, embodies this philosophy. It moves at its own pace, indifferent to the tourist hordes and tour buses that pass through. In the early morning, before the crowds arrive, the city reveals its true self.</p>
+
+      <h2>Arriving Before Sunrise</h2>
+
+      <p>We reached Fushimi Inari at 5:30 AM. The gates — thousands of vermilion torii stretching up into the mountain — were empty except for a few joggers and an elderly man sweeping fallen leaves. The wood creaked underfoot. Incense drifted from a small shrine tucked into the hillside.</p>
+
+      <blockquote>
+        "The gates are donated by businesses as offerings, each one inscribed with the donor's name and date. Some are centuries old."
+      </blockquote>
+
+      <p>Walking through them in the half-light felt like passing through time itself.</p>
+
+      <h2>The Bamboo Grove at Arashiyama</h2>
+
+      <p>By 7 AM we were at Arashiyama. The bamboo forest is famous for a reason — the stalks rise 30 metres overhead, clicking and rustling in a private language. Sound behaves differently here. The city disappears entirely.</p>
+
+      <p>We walked until we found a small path leading to a viewpoint over the Oi River. Cormorant fishermen were already out on the water, their birds tethered by fine silk strings. A ritual unchanged for 1,300 years.</p>
+
+      <h2>Practical Notes</h2>
+
+      <p>The best time to visit Kyoto's major sites is before 8 AM, or after 5 PM in summer. Autumn is particularly spectacular — the maples turn from green to gold to crimson between late October and mid-November.</p>
+
+      <p>Stay in a traditional ryokan at least one night. Wake up to a multi-course Japanese breakfast and a view of a raked stone garden. It changes how you understand the rest of the trip.</p>
+    </div>
+
+    <!-- Share -->
+    <div class="post-share">
+      <span class="post-share-label">Share</span>
+      <button class="share-btn" onclick="sharePost('twitter')">Twitter</button>
+      <button class="share-btn" onclick="sharePost('copy')">Copy Link</button>
+    </div>
+  </main>
+
+  <!-- GALLERY -->
+  <section class="post-gallery" aria-label="Photo gallery">
+    <span class="gallery-label">Photo Gallery</span>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80" alt="Kyoto temples" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Japanese garden" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80" alt="Kyoto street" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" role="dialog" aria-label="Image lightbox" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Travel with <span>Zaheer</span></div>
+        <p class="footer-tagline">Exploring the world one story at a time.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">More Stories</div>
+        <ul class="footer-links">
+          <li><a href="/blog.html">Asia</a></li>
+          <li><a href="/blog.html">Europe</a></li>
+          <li><a href="/blog.html">Africa</a></li>
+          <li><a href="/blog.html">Americas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Travel with Zaheer. All rights reserved.</p>
+      <a href="/admin/" class="footer-admin-link">Admin</a>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script>
+    function sharePost(platform) {
+      const url = window.location.href;
+      const title = document.querySelector('.post-hero-title')?.textContent || 'Travel with Zaheer';
+
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+      } else if (platform === 'copy') {
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = document.querySelector('.share-btn:last-child');
+          if (btn) {
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy Link', 2000);
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
